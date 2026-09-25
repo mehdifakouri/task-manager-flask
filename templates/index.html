@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Task Manager</h1>
+            <p class="subtitle">Simple task management with Python + PostgreSQL</p>
+        </header>
+
+        <!-- فرم اضافه کردن تسک -->
+        <form id="task-form" class="task-form">
+            <input
+                type="text"
+                id="task-title"
+                placeholder="What do you need to do?"
+                required
+                autocomplete="off"
+            >
+            <input
+                type="text"
+                id="task-description"
+                placeholder="Description (optional)"
+                autocomplete="off"
+            >
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- لیست تسک‌ها -->
+        <div id="tasks-container">
+            <p class="empty-state">Loading tasks...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
